@@ -1,14 +1,13 @@
-#设置基础镜像,如果本地没有该镜像，会从Docker.io服务器pull镜像
-FROM node
+FROM node:onbuild
 
-#创建app目录,保存我们的代码
-RUN mkdir -p /usr/src/node
-#设置工作目录
-WORKDIR /usr/src/node
+ENV PROJECT_THEME=mirror
+ENV PROJECT_NAME=welovejouvert
+ENV ENDURO_USER=admin
+ENV ENDURO_PASS=pass
 
-#复制所有文件到 工作目录。
-COPY . /usr/src/node
+RUN npm install -g enduro && npm install -g bower && npm install -g gulp
 
-#编译运行node项目，使用npm安装程序的所有依赖,利用taobao的npm安装
+VOLUME 
 
-RUN npm install enduro -g
+EXPOSE 5000
+EXPOSE 3000
