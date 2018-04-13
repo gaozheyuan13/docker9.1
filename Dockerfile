@@ -11,16 +11,4 @@ COPY . /usr/src/node
 
 #编译运行node项目，使用npm安装程序的所有依赖,利用taobao的npm安装
 
-WORKDIR /usr/src/node/website
-RUN npm install --registry=https://registry.npm.taobao.org
-
-#暴露container的端口
-EXPOSE 8888
-
-#运行命令
-CMD ["npm", "start"]
-
-作者：weiqinl
-链接：https://www.jianshu.com/p/573ce72804da
-來源：简书
-著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
+RUN npm install enduro -g
