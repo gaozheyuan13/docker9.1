@@ -11,4 +11,4 @@ COPY . /usr/src/node
 
 #编译运行node项目，使用npm安装程序的所有依赖,利用taobao的npm安装
 
-RUN sudo npm install enduro -g
+RUN npm install enduro -g
